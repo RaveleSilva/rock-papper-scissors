@@ -5,9 +5,18 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Barlow Semi Condensed', sans-serif;
+  transition: 0.4s;
 }
 
 button{
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 8px 32px;
+  border-radius: 8px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
   display: block;
   width: max-content;
 }
@@ -21,7 +30,6 @@ body{
 }
 
 .container{
-  max-width: 700px;
   margin: auto;
 }
 
@@ -33,7 +41,9 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 80px;
 }
 
 header h1{
@@ -68,6 +78,11 @@ header h1{
   line-height: 68px;
 }
 
+.action-screen{
+  max-width: 900px;
+  margin: auto;
+}
+
 .pick-screen{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -79,27 +94,28 @@ header h1{
   background-position: 50% 60%;
   row-gap: 20px;
   transition: 0.4s;
+  margin-bottom: 40px;
 }
 
-.pick-screen > div{
+.paper, .scissors, .rock{
   padding: 16px;
   width: max-content;
   border-radius: 50%;
   background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
 }
 
-.pick-screen > div:nth-child(2){
+.scissors{
   background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
   justify-self: end;
 }
 
-.pick-screen > div:nth-child(3){
+.rock{
   background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
   grid-column: 1 / -1;
   justify-self: center;
 }
 
-.pick-screen img{
+img{
   padding: 28px;
   background-color: white;
   border-radius: 50%;
@@ -107,18 +123,75 @@ header h1{
   height: 120px;
 }
 
+.show-picks-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  display: none;
+}
+
+.show-picks-screen > div{
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.pick{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.pick > div{
+  padding: 32px;
+}
+
+.pick img{
+  padding: 40px;
+  width: 200px;
+  height: 200px;
+}
+
+#house-pick{
+  position: relative;
+  align-self: flex-start;
+}
+
+#house-pick::before{
+  content: '';
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: hsl(237, 49%, 15%);
+  position: absolute;
+  z-index: -1;
+  margin-top: 100px;
+}
+
+.result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  display: none;
+}
+
+.result span{
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.result button{
+  padding: 16px 60px;
+  font-size: 1rem;
+}
+
 footer{
   display: flex;
   justify-content: flex-end;
-}
-
-#rules{
-  font-size: 20px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  padding: 8px 32px;
-  border-radius: 8px;
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  padding: 40px 0px;
 }
