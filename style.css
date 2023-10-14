@@ -7,12 +7,6 @@
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 button{
   display: block;
   width: max-content;
@@ -23,6 +17,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   padding: 40px 20px 0px 20px;
+  min-height: 100vh;
 }
 
 .container{
@@ -71,4 +66,59 @@ header h1{
   font-weight: 700;
   font-size: 68px;
   line-height: 68px;
+}
+
+.pick-screen{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 380px;
+  margin: auto;
+  background-image: url(images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: 250px;
+  background-position: 50% 60%;
+  row-gap: 20px;
+  transition: 0.4s;
+}
+
+.pick-screen > div{
+  padding: 16px;
+  width: max-content;
+  border-radius: 50%;
+  background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.pick-screen > div:nth-child(2){
+  background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  justify-self: end;
+}
+
+.pick-screen > div:nth-child(3){
+  background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.pick-screen img{
+  padding: 28px;
+  background-color: white;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+footer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#rules{
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 8px 32px;
+  border-radius: 8px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
 }
