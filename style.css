@@ -21,6 +21,12 @@ button{
   width: max-content;
 }
 
+button:hover{
+  background-color: white;
+  color: hsl(349, 70%, 56%);
+  cursor: pointer;
+}
+
 body{
   background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   background-repeat: no-repeat;
@@ -95,6 +101,11 @@ header h1{
   row-gap: 20px;
   transition: 0.4s;
   margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.pick-screen > div:hover img{
+  transform: scale(1.2);
 }
 
 .paper, .scissors, .rock{
