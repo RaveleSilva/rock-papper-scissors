@@ -258,5 +258,28 @@ header h1{
 footer{
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 20px;
+  padding: 40px 0px;
 }
+
+@media (max-width: 900px) {
+  .pick > div{
+    padding: 16px;
+  }
+  
+  .pick img{
+    padding: 20px;
+    width: 120px;
+    height: 120px;
+  }
+
+  #house-pick::before {
+    height: 120px;
+    width: 120px;
+    margin-top: 140px;
+  }
+
+  footer{
+    justify-content: center;
+  }
+}
+
