@@ -136,7 +136,8 @@ header h1{
 }
 
 .show-picks-screen{
-  justify-content: center;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto;
   align-items: center;
   gap: 60px;
   display: none;
@@ -167,11 +168,15 @@ header h1{
 }
 
 #house-pick{
-  position: relative;
-  align-self: flex-start;
+  grid-column: 3 / -1;
+  align-self: start;
 }
 
-#house-pick::before{
+#house-pick h2{
+  position: relative;
+}
+
+#house-pick h2::before{
   content: '';
   display: block;
   width: 200px;
@@ -180,7 +185,8 @@ header h1{
   background-color: hsl(237, 49%, 15%);
   position: absolute;
   z-index: -1;
-  margin-top: 100px;
+  top: 120px;
+  left: calc(50% - 100px);
 }
 
 .result{
@@ -226,12 +232,15 @@ header h1{
   font-weight: 700;
   color: hsl(229, 25%, 31%);
   align-self: center;
+  transition: 0s;
 }
 
 .rules-img{
   justify-self: center;
   grid-column: 1 / -1;
   transition: 0s;
+  width: 100%;
+  height: auto;
 }
 
 .close-modal{
@@ -272,13 +281,99 @@ footer{
     height: 120px;
   }
 
-  #house-pick::before {
-    height: 120px;
+  #house-pick h2::before {
     width: 120px;
-    margin-top: 140px;
+    height: 120px;
+    left: calc(50% - 60px);
   }
 
   footer{
     justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .show-picks-screen{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #house-pick {
+    align-self: end;
+  }
+
+  #house-pick h2::before {
+    width: 120px;
+    height: 120px;
+    left: calc(50% - 60px);
+    top: -190px;
+  }
+
+  .pick h2 {
+    order: 1;
+  }
+  
+  .result{
+    grid-row: 2 / -1;
+    grid-column: 1 / 4;
+    margin-bottom: 40px;
+    justify-self: center;
+  }
+
+  .pick {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo img{
+    width: 100px;
+  }
+
+  .score{
+    padding: 8px 20px;
+    gap: 2px;
+  }
+
+  .score h2{
+    font-size: 12px;
+  }
+
+  #score{
+    font-size: 40px;
+    line-height: initial;
+  }
+
+  .show-picks-screen {
+    gap: 80px 20px;
+  }
+
+  #rules-modal{
+    width: 300px;
+    left: calc(50% - 150px);
+  }
+
+  .pick {
+    gap: 28px;
+  }
+
+  .pick > div, .pick-screen > div{
+    padding: 10px;
+  }
+  
+  .pick img, .pick-screen img{
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .pick h2 {
+    font-size: 1rem;
+  }
+
+  #house-pick h2::before {
+    width: 120px;
+    height: 120px;
+    left: calc(50% - 60px);
+    top: -152px;
   }
 }

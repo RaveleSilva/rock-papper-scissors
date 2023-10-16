@@ -54,7 +54,7 @@ function getUserPick(event) {
 
   elements.showUserPick.appendChild(userPickClone);
   elements.userPickScreen.style.display = 'none';
-  elements.showPicksScreen.style.display = 'flex';
+  elements.showPicksScreen.style.display = 'grid';
 
   showHousePick();
   getResult();
