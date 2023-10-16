@@ -42,6 +42,7 @@ function showHousePick() {
   elements.housePickText.innerHTML = 'THE HOUSE IS PICKING...';
 
   setTimeout(() => {
+    elements.housePickText.classList.add('hide')
     elements.showHouse.appendChild(housePickDiv);
     elements.housePickText.innerHTML = 'THE HOUSE PICKED';
   }, 1000);
@@ -88,6 +89,7 @@ function playAgain() {
   elements.userPickScreen.style.display = 'grid';
   elements.showUserPick.removeChild(userPickClone);
   elements.showHouse.removeChild(housePickDiv);
+  elements.housePickText.classList.remove('hide')
 }
 
 function showRules() {

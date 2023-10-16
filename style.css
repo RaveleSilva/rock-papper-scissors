@@ -189,6 +189,10 @@ header h1{
   left: calc(50% - 100px);
 }
 
+#house-pick h2.hide::before {
+  display: none;
+}
+
 .result{
   display: flex;
   flex-direction: column;
@@ -343,6 +347,20 @@ footer{
     line-height: initial;
   }
 
+  .pick-screen{
+    gap: 40px;
+    background-size: 230px;
+  }
+
+  .pick-screen > div:nth-child(1) {
+    background-color: red;
+    justify-self: end;
+  }
+
+  .pick-screen > div:nth-child(2) {
+    justify-self: start;
+  }
+
   .show-picks-screen {
     gap: 80px 20px;
   }
@@ -357,13 +375,13 @@ footer{
   }
 
   .pick > div, .pick-screen > div{
-    padding: 10px;
+    padding: 16px;
   }
   
   .pick img, .pick-screen img{
-    padding: 10px;
-    width: 100px;
-    height: 100px;
+    padding: 16px;
+    width: 80px;
+    height: 80px;
   }
 
   .pick h2 {
